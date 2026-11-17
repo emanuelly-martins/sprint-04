@@ -16,8 +16,9 @@ app.get("/sobre", (req, res) => res.send("Mensageiro Local com Node.js, Express 
 
 // — [SPRINT 04 – ROTAS ALTERADAS PARA USAR ARQUIVOS] —
 app.get("/mensagens", async (req, res) => {
-  try { res.json(await lerMensagens()); }
-  catch (erro) {
+  try { 
+    res.json(await lerMensagens()); 
+  } catch (erro) {
     console.error(erro);
     res.status(500).json({ erro: "Não foi possível ler as mensagens." });
   }
